@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Mukul Khanna</title>
+    <title>Deep Neural Notebooks</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="assets/main/css/main.css?v=5ae19bad89" />
+    <style>
+      /* This font-face is here to make icons work if the Ghost instance is installed in a subdirectory */
+      @font-face {
+        font-family: 'icomoon';
+        src: url("assets/fonts/icomoon.eot?vukg2s?v=423eaed078");
+        src: url("assets/fonts/icomoon.eot?vukg2s") format('embedded-opentype'),
+        url("assets/fonts/icomoon.ttf?vukg2s?v=423eaed078") format('truetype'),
+        url("assets/fonts/icomoon.woff?vukg2s?v=423eaed078") format('woff'),
+        url("assets/fonts/icomoon.svg?vukg2s") format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css?v=423eaed078" media="screen" />
 
-    <meta name="description" content="Thoughts, stories and ideas." />
+      <style>
+    .m-hero__picture {
+      background-image: url(content/images/size/w2000/2020/07/jukka-aalho-gKKB13zJ1ss-unsplash.jpg);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(content/images/size/w1000/2020/07/jukka-aalho-gKKB13zJ1ss-unsplash.jpg);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(content/images/size/w600/2020/07/jukka-aalho-gKKB13zJ1ss-unsplash.jpg);
+      }
+    }
+  </style>
+
+
+    <meta name="description" content="Deep Learning Stories | Productivity | Learning" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="index.html" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
-    <link rel="next" href="page/2/index.html" />
     
-    <meta property="og:site_name" content="Mukul Khanna" />
+    <meta property="og:site_name" content="Deep Neural Notebooks" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Mukul Khanna" />
-    <meta property="og:description" content="Thoughts, stories and ideas." />
+    <meta property="og:title" content="Deep Neural Notebooks" />
+    <meta property="og:description" content="Deep Learning Stories | Productivity | Learning" />
     <meta property="og:url" content="http://localhost:2368/" />
-    <meta property="og:image" content="https://static.ghost.org/v3.0.0/images/publication-cover.png" />
+    <meta property="og:image" content="http://localhost:2368/content/images/2020/07/jukka-aalho-gKKB13zJ1ss-unsplash.jpg" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mukul Khanna" />
-    <meta name="twitter:description" content="Thoughts, stories and ideas." />
+    <meta name="twitter:title" content="Deep Neural Notebooks" />
+    <meta name="twitter:description" content="Deep Learning Stories | Productivity | Learning" />
     <meta name="twitter:url" content="http://localhost:2368/" />
-    <meta name="twitter:image" content="https://static.ghost.org/v3.0.0/images/publication-cover.png" />
-    <meta name="twitter:site" content="tryghost" />
-    <meta property="og:image:width" content="2709" />
-    <meta property="og:image:height" content="938" />
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2020/07/jukka-aalho-gKKB13zJ1ss-unsplash.jpg" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1333" />
     
     <script type="application/ld+json">
 {
@@ -39,7 +70,7 @@
     "@type": "WebSite",
     "publisher": {
         "@type": "Organization",
-        "name": "Mukul Khanna",
+        "name": "Deep Neural Notebooks",
         "url": "http://localhost:2368/",
         "logo": {
             "@type": "ImageObject",
@@ -49,181 +80,496 @@
     "url": "http://localhost:2368/",
     "image": {
         "@type": "ImageObject",
-        "url": "https://static.ghost.org/v3.0.0/images/publication-cover.png",
-        "width": 2709,
-        "height": 938
+        "url": "http://localhost:2368/content/images/2020/07/jukka-aalho-gKKB13zJ1ss-unsplash.jpg",
+        "width": 2000,
+        "height": 1333
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://localhost:2368/"
     },
-    "description": "Thoughts, stories and ideas."
+    "description": "Deep Learning Stories | Productivity | Learning"
 }
     </script>
 
     <meta name="generator" content="Ghost 3.21" />
-    <link rel="alternate" type="application/rss+xml" title="Mukul Khanna" href="rss/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Deep Neural Notebooks" href="rss/index.html" />
 
-</head>
-<body class="is-preload home-template">
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "http://localhost:2368"
+      // @license-end
+    </script>
 
-    <div id="wrapper">
-        <main id="main">
-            <div id="main-content" class="inner">
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
 
-                <header id="header">
-                        <a href="index.html" class="logo image"><img src="https://static.ghost.org/v1.0.0/images/ghost-logo.svg" alt="Mukul Khanna" /></a>
-                    <ul class="icons">
-                            <li><a href="https://twitter.com/tryghost" class="icon fa-twitter" title="Twitter"><span class="label">Twitter</span></a></li>
-                            <li><a href="https://www.facebook.com/ghost" class="icon fa-facebook" title="Facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="https://feedly.com/i/subscription/feed/http://localhost:2368/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
-                    </ul>
-                </header>
-
-                
-                
-
-
-<section>
-
-    <header class="major">
-        <h2>Recent posts</h2>
-    </header>
-
-    <section class="posts">
-        <article>
-            <a href="welcome/index.html" class="image fit"><img src="https://static.ghost.org/v3.0.0/images/welcome-to-ghost.png" alt="Welcome to Ghost" /></a>
-            <h3><a href="welcome/index.html">Welcome to Ghost</a></h3>
-            <p>Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.</p>
-            <ul class="actions special">
-                <li><a href="welcome/index.html" class="button">Full Article</a></li>
-            </ul>
-        </article>
-        <article>
-            <a href="the-editor/index.html" class="image fit"><img src="https://static.ghost.org/v3.0.0/images/writing-posts-with-ghost.png" alt="Writing posts with Ghost ✍️" /></a>
-            <h3><a href="the-editor/index.html">Writing posts with Ghost ✍️</a></h3>
-            <p>Discover familiar formatting options in a functional toolbar and the ability to add dynamic content seamlessly.</p>
-            <ul class="actions special">
-                <li><a href="the-editor/index.html" class="button">Full Article</a></li>
-            </ul>
-        </article>
-        <article>
-            <a href="publishing-options/index.html" class="image fit"><img src="https://static.ghost.org/v3.0.0/images/publishing-options.png" alt="Publishing options" /></a>
-            <h3><a href="publishing-options/index.html">Publishing options</a></h3>
-            <p>The Ghost editor post settings menu has everything you need to fully optimise and distribute your content effectively.</p>
-            <ul class="actions special">
-                <li><a href="publishing-options/index.html" class="button">Full Article</a></li>
-            </ul>
-        </article>
-        <article>
-            <a href="admin-settings/index.html" class="image fit"><img src="https://static.ghost.org/v3.0.0/images/admin-settings.png" alt="Managing admin settings" /></a>
-            <h3><a href="admin-settings/index.html">Managing admin settings</a></h3>
-            <p>There are a couple of things to do next while you're getting set up: making your site private and inviting your team.</p>
-            <ul class="actions special">
-                <li><a href="admin-settings/index.html" class="button">Full Article</a></li>
-            </ul>
-        </article>
-        <article>
-            <a href="organising-content/index.html" class="image fit"><img src="https://static.ghost.org/v3.0.0/images/organising-your-content.png" alt="Organising your content" /></a>
-            <h3><a href="organising-content/index.html">Organising your content</a></h3>
-            <p>Ghost has a flexible organisational taxonomy called tags and the ability to create custom site structures using dynamic routes.</p>
-            <ul class="actions special">
-                <li><a href="organising-content/index.html" class="button">Full Article</a></li>
-            </ul>
-        </article>
-        <article>
-            <a href="apps-integrations/index.html" class="image fit"><img src="https://static.ghost.org/v3.0.0/images/app-integrations.png" alt="Apps &amp; integrations" /></a>
-            <h3><a href="apps-integrations/index.html">Apps &amp; integrations</a></h3>
-            <p>Work with all your favourite apps and tools or create your own custom integrations using the Ghost API.</p>
-            <ul class="actions special">
-                <li><a href="apps-integrations/index.html" class="button">Full Article</a></li>
-            </ul>
-        </article>
-    </section>
-
-</section>
-
-<footer>
-    <nav class="pagination" role="navigation">
-        <span class="page-number">Page 1 of 2</span>
-        <a class="page next older-posts" href="page/2/index.html">Older Posts</a>
-    </nav>
-</footer>
-
-
-
-                <div id="main-search" style="display: none; padding: 6em 0 4em 0;">
-                    <header class="major">
-                        <h2>Search results</h2>
-                    </header>
-
-                    <section class="posts" id="search-body"></section>
-                </div>
-            
-            </div>
-        </main>
-
-        <div id="sidebar">
-    <div class="inner">
-
-            <nav id="menu">
-    <header class="major">
-        <h2>Menu</h2>
-    </header>
-    <ul class="links">
-        <li class="nav-home active"><a href="index.html">Home</a></li>
-        <li class="nav-tag "><a href="tag/getting-started/index.html">Tag</a></li>
-        <li class="nav-author "><a href="author/ghost/index.html">Author</a></li>
-        <li class="nav-help "><a href="https://ghost.org/docs/">Help</a></li>
-    </ul>
-</nav>
-
-        <!-- Search -->
-        <section id="search" class="alt">
-            <form id="query_form">
-                <input type="text" name="query" id="query" placeholder="Search"/>
-            </form>
-        </section>
-
-        <section>
-            <header class="major">
-                <h2>Recent Posts</h2>
-            </header>
-            <div class="mini-posts">
-                <article>
-                    <h3><a href="welcome/index.html">Welcome to Ghost</a></h3>
-                    <p>Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.</p>
-                </article>
-                <article>
-                    <h3><a href="the-editor/index.html">Writing posts with Ghost ✍️</a></h3>
-                    <p>Discover familiar formatting options in a functional toolbar and the ability to add dynamic content seamlessly.</p>
-                </article>
-                <article>
-                    <h3><a href="publishing-options/index.html">Publishing options</a></h3>
-                    <p>The Ghost editor post settings menu has everything you need to fully optimise and distribute your content effectively.</p>
-                </article>
-            </div>
-        </section>
-
-
-        <footer id="footer">
-            <p class="copyright">&copy; Mukul Khanna - All rights reserved<br>
-                Design: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a>, Published with <a
-                    href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></p>
-        </footer>
-
-    </div>
-</div>
-    </div>
-
-    <script src="assets/main/js/jquery.min.js?v=5ae19bad89"></script>
-    <script src="assets/main/js/jquery.ghosthunter.js?v=5ae19bad89"></script>
-    <script src="assets/main/js/browser.min.js?v=5ae19bad89"></script>
-    <script src="assets/main/js/breakpoints.min.js?v=5ae19bad89"></script>
-    <script src="assets/main/js/util.js?v=5ae19bad89"></script>
-    <script src="assets/main/js/main.js?v=5ae19bad89"></script>
-
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="home-template">
     
 
-</body>
+<div class="main-wrap">
+  
+<header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="index.html" class="m-logo in-mobile-topbar">
+        <img src="https://static.ghost.org/v1.0.0/images/ghost-logo.svg" alt="Deep Neural Notebooks">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="index.html" class="m-logo">
+                    <img src="https://static.ghost.org/v1.0.0/images/ghost-logo.svg" alt="Deep Neural Notebooks">
+                  </a>
+                </li>
+                
+    <li class="nav-podcast nav-current" role="menuitem">
+      <a href="index.html">Podcast</a>
+    </li>
+    <li class="nav-about" role="menuitem">
+      <a href="author/mukul/index.html">About</a>
+    </li>
+
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                          <div class="glide js-recent-slider">
+                            <div class="glide__track" data-glide-el="track">
+                              <div class="glide__slides">
+                                <div class="glide__slide">
+                                  <a href="dnn-8/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="content/images/size/w300/2020/07/Podcast-thumbnails.009.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani">
+                                      DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani
+                                    </h3>
+                                    <span class="m-recent-article__date">a month ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="dnn-7-reinforcement-learning-waymo/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="content/images/size/w300/2020/07/Podcast-thumbnails.008.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN 7: Reinforcement Learning, Waymo // Shimon Whiteson">
+                                      DNN 7: Reinforcement Learning, Waymo // Shimon Whiteson
+                                    </h3>
+                                    <span class="m-recent-article__date">a month ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="dnn-6/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="content/images/size/w300/2020/07/Podcast-thumbnails.007.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN 6: Spirituality, Music &amp; The Bhagavad Gita // Srinivas Reddy">
+                                      DNN 6: Spirituality, Music &amp; The Bhagavad Gita // Srinivas Reddy
+                                    </h3>
+                                    <span class="m-recent-article__date">3 months ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="neuroscience-art-and-creativity/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="content/images/size/w300/2020/07/Podcast-thumbnails.005.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN:5 Neuroscience, Art and Creativity // Leslee Lazar">
+                                      DNN:5 Neuroscience, Art and Creativity // Leslee Lazar
+                                    </h3>
+                                    <span class="m-recent-article__date">3 months ago</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                        <ul>
+                            <li>
+                              <a href="tag/art/index.html">Art</a>
+                            </li>
+                            <li>
+                              <a href="tag/chatbots/index.html">Chatbots</a>
+                            </li>
+                            <li>
+                              <a href="tag/computer-vision/index.html">Computer Vision</a>
+                            </li>
+                            <li>
+                              <a href="tag/creativity/index.html">Creativity</a>
+                            </li>
+                            <li>
+                              <a href="tag/data-science/index.html">Data Science</a>
+                            </li>
+                            <li>
+                              <a href="tag/deep-learning/index.html">Deep Learning</a>
+                            </li>
+                            <li>
+                              <a href="tag/knowledge/index.html">Knowledge</a>
+                            </li>
+                            <li>
+                              <a href="tag/machine-learning/index.html">Machine Learning</a>
+                            </li>
+                            <li>
+                              <a href="tag/music/index.html">Music</a>
+                            </li>
+                            <li>
+                              <a href="tag/nlp/index.html">NLP</a>
+                            </li>
+                        </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+  
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture "></div>
+  <div class="m-hero__content" data-aos="fade-down">
+    <h1 class="m-hero-title bigger">Deep Neural Notebooks</h1>
+      <p class="m-hero-description bigger">Deep Learning Stories | Productivity | Learning</p>
+  </div>
+  </section>
+  
+  <main>
+    <div class="l-content">
+      <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+        <div class="l-grid centered">
+          
+    <article class="m-article-card post tag-computer-vision tag-deep-learning tag-machine-learning">
+    <div class="m-article-card__picture">
+      <a href="dnn-8/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.009.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/computer-vision/index.html" class="m-article-card__tag">Computer Vision</a>
+      <a href="dnn-8/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani">
+            DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>a month ago</span>
+          <span>&bull;</span>
+          <span></span>
+        </div>
+      </a>
+    </div>
+  </article>
+    <article class="m-article-card post tag-reinforcement-learning">
+    <div class="m-article-card__picture">
+      <a href="dnn-7-reinforcement-learning-waymo/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.008.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/reinforcement-learning/index.html" class="m-article-card__tag">Reinforcement Learning</a>
+      <a href="dnn-7-reinforcement-learning-waymo/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN 7: Reinforcement Learning, Waymo // Shimon Whiteson">
+            DNN 7: Reinforcement Learning, Waymo // Shimon Whiteson
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>a month ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    <article class="m-article-card post tag-philosophy tag-spirituality tag-music">
+    <div class="m-article-card__picture">
+      <a href="dnn-6/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.007.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/philosophy/index.html" class="m-article-card__tag">Philosophy</a>
+      <a href="dnn-6/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN 6: Spirituality, Music &amp; The Bhagavad Gita // Srinivas Reddy">
+            DNN 6: Spirituality, Music &amp; The Bhagavad Gita // Srinivas Reddy
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 months ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    <article class="m-article-card post tag-neuroscience tag-art tag-creativity">
+    <div class="m-article-card__picture">
+      <a href="neuroscience-art-and-creativity/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.005.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/neuroscience/index.html" class="m-article-card__tag">Neuroscience</a>
+      <a href="neuroscience-art-and-creativity/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN:5 Neuroscience, Art and Creativity // Leslee Lazar">
+            DNN:5 Neuroscience, Art and Creativity // Leslee Lazar
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 months ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    <article class="m-article-card post tag-knowledge">
+    <div class="m-article-card__picture">
+      <a href="dnn-4-knowledge-wharton-tech-leadership-mukul-pandya/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.004.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/knowledge/index.html" class="m-article-card__tag">Knowledge</a>
+      <a href="dnn-4-knowledge-wharton-tech-leadership-mukul-pandya/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN 4: Knowledge@Wharton, Tech, Leadership // Mukul Pandya">
+            DNN 4: Knowledge@Wharton, Tech, Leadership // Mukul Pandya
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>3 months ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    <article class="m-article-card post tag-open-source tag-data-science tag-web tag-machine-learning">
+    <div class="m-article-card__picture">
+      <a href="dnn3/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.003.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/open-source/index.html" class="m-article-card__tag">Open Source</a>
+      <a href="dnn3/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN3: Data Science on the Web, Mozilla, Matplotlib, Pyodide // Mike Droettboom">
+            DNN3: Data Science on the Web, Mozilla, Matplotlib, Pyodide // Mike Droettboom
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>7 months ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    <article class="m-article-card post tag-nlp tag-deep-learning tag-chatbots tag-open-source">
+    <div class="m-article-card__picture">
+      <a href="conversational-ai-nlp-huggingface/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.002-2.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/nlp/index.html" class="m-article-card__tag">NLP</a>
+      <a href="conversational-ai-nlp-huggingface/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN2: Conversational AI, NLP &amp; HuggingFace 🤗 // Thomas Wolf">
+            DNN2: Conversational AI, NLP &amp; HuggingFace 🤗 // Thomas Wolf
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>7 months ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    <article class="m-article-card post tag-computer-vision tag-deep-learning">
+    <div class="m-article-card__picture">
+      <a href="dnn1/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="content/images/size/w600/2020/07/Podcast-thumbnails.001-3.jpeg" loading="lazy" alt="">
+      <a href="author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="tag/computer-vision/index.html" class="m-article-card__tag">Computer Vision</a>
+      <a href="dnn1/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN1: HDR Imaging &amp; DL for Computer Vision // Shanmuga Raman">
+            DNN1: HDR Imaging &amp; DL for Computer Vision // Shanmuga Raman
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>7 months ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+        </div>
+      </div>
+      
+<div class="l-wrapper">
+  <nav class="m-pagination">
+    <span class="m-pagination__text">Page 1 of 1</span>
+  </nav>
+</div>
+
+    </div>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, please try with something else.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Deep Neural Notebooks &copy; 2020</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://www.facebook.com/ghost" target="_blank" rel="noopener" aria-label="Facebook">
+          <span class="icon-facebook"></span>
+        </a>
+        <a href="https://twitter.com/tryghost" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="assets/html/javascript.html?v=423eaed078" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <div class="m-alert success subscribe js-alert" data-notification="subscribe">
+  Great! You&#x27;ve successfully subscribed.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+
+<div class="m-alert success signup js-alert" data-notification="signup">
+  Great! Next, complete checkout for full access.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+
+<div class="m-alert success signin js-alert" data-notification="signin">
+  Welcome back! You&#x27;ve successfully signed in.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+
+<div class="m-alert success checkout js-alert" data-notification="checkout">
+  Success! Your account is fully activated, you now have access to all content.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="assets/js/vendor/content-api.min.js?v=423eaed078"></script>
+    <script defer src="assets/js/manifest.js?v=423eaed078"></script>
+    <script defer src="assets/js/vendor.js?v=423eaed078"></script>
+    <script defer src="assets/js/app.js?v=423eaed078"></script>
+
+      <script defer src="assets/js/home.js?v=423eaed078"></script>
+
+
+    
+  </body>
 </html>

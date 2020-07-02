@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>DNN3: Data Science on the Web, Mozilla, Matplotlib, Pyodide // Mike Droettboom</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      /* This font-face is here to make icons work if the Ghost instance is installed in a subdirectory */
+      @font-face {
+        font-family: 'icomoon';
+        src: url("../assets/fonts/icomoon.eot?vukg2s?v=423eaed078");
+        src: url("../assets/fonts/icomoon.eot?vukg2s") format('embedded-opentype'),
+        url("../assets/fonts/icomoon.ttf?vukg2s?v=423eaed078") format('truetype'),
+        url("../assets/fonts/icomoon.woff?vukg2s?v=423eaed078") format('woff'),
+        url("../assets/fonts/icomoon.svg?vukg2s") format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../assets/css/app.css?v=423eaed078" media="screen" />
+
+      <style>
+    .m-hero__picture {
+      background-image: url(../content/images/size/w2000/2020/07/Podcast-thumbnails.003.jpeg);
+    }
+  
+    @media(max-width: 1000px) {
+      .m-hero__picture {
+        background-image: url(../content/images/size/w1000/2020/07/Podcast-thumbnails.003.jpeg);
+      }
+    }
+  
+    @media(max-width: 600px) {
+      .m-hero__picture {
+        background-image: url(../content/images/size/w600/2020/07/Podcast-thumbnails.003.jpeg);
+      }
+    }
+  </style>
+
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="index.html" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="amp/index.html" />
+    
+    <meta property="og:site_name" content="Deep Neural Notebooks" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="DNN3: Data Science on the Web, Mozilla, Matplotlib, Pyodide // Mike Droettboom" />
+    <meta property="og:description" content="In the third episode of Deep Neural Notebooks, I talk with Michael Droettboom, from Mozilla. Michael is a Staff Data Engineer at Mozilla, where he works on managing the telemetry from Mozilla products, that can be used for improving the user experience and the product itself, while respecting data privacy" />
+    <meta property="og:url" content="http://localhost:2368/dnn3/" />
+    <meta property="og:image" content="http://localhost:2368/content/images/2020/07/Podcast-thumbnails.003.jpeg" />
+    <meta property="article:published_time" content="2019-12-11T12:18:00.000Z" />
+    <meta property="article:modified_time" content="2020-07-02T14:49:37.000Z" />
+    <meta property="article:tag" content="Open Source" />
+    <meta property="article:tag" content="Data Science" />
+    <meta property="article:tag" content="Web" />
+    <meta property="article:tag" content="Machine Learning" />
+    
+    <meta property="article:publisher" content="https://www.facebook.com/ghost" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DNN3: Data Science on the Web, Mozilla, Matplotlib, Pyodide // Mike Droettboom" />
+    <meta name="twitter:description" content="In the third episode of Deep Neural Notebooks, I talk with Michael Droettboom, from Mozilla. Michael is a Staff Data Engineer at Mozilla, where he works on managing the telemetry from Mozilla products, that can be used for improving the user experience and the product itself, while respecting data privacy" />
+    <meta name="twitter:url" content="http://localhost:2368/dnn3/" />
+    <meta name="twitter:image" content="http://localhost:2368/content/images/2020/07/Podcast-thumbnails.003.jpeg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Mukul Khanna" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Open Source, Data Science, Web, Machine Learning" />
+    <meta name="twitter:site" content="@tryghost" />
+    <meta name="twitter:creator" content="@mkulkhanna" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Deep Neural Notebooks",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://static.ghost.org/v1.0.0/images/ghost-logo.svg"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mukul Khanna",
+        "image": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG",
+            "width": 2000,
+            "height": 1981
+        },
+        "url": "http://localhost:2368/author/mukul/",
+        "sameAs": [
+            "http://mukulkhanna.co",
+            "https://twitter.com/mkulkhanna"
+        ]
+    },
+    "headline": "DNN3: Data Science on the Web, Mozilla, Matplotlib, Pyodide // Mike Droettboom",
+    "url": "http://localhost:2368/dnn3/",
+    "datePublished": "2019-12-11T12:18:00.000Z",
+    "dateModified": "2020-07-02T14:49:37.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "http://localhost:2368/content/images/2020/07/Podcast-thumbnails.003.jpeg",
+        "width": 1280,
+        "height": 720
+    },
+    "keywords": "Open Source, Data Science, Web, Machine Learning",
+    "description": "In the third episode of Deep Neural Notebooks, I talk with Michael Droettboom,\nfrom Mozilla.\n\nMichael is a Staff Data Engineer at Mozilla, where he works on managing the\ntelemetry from Mozilla products, that can be used for improving the user\nexperience and the product itself, while respecting data privacy and making sure\nthat instead of snarfing it all up, only the absolutely minimal data is gathered\nfrom the user. He specializes in imaging and data: sheet music, scientific\nvisualization, astro",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 3.21" />
+    <link rel="alternate" type="application/rss+xml" title="Deep Neural Notebooks" href="../rss/index.html" />
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "http://localhost:2368"
+      // @license-end
+    </script>
+
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      WebFontConfig = {
+        google: { families: ['Source+Sans+Pro:400,600,700&display=swap'] }
+      };
+
+      (function (d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+      // @license-end
+    </script>
+  </head>
+  <body class="post-template tag-open-source tag-data-science tag-web tag-machine-learning">
+    
+
+<div class="main-wrap">
+    
+<header class="m-header with-picture js-header">
+  <div class="m-mobile-topbar" data-aos="fade-down">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu"></span>
+    </button>
+      <a href="../index.html" class="m-logo in-mobile-topbar">
+        <img src="https://static.ghost.org/v1.0.0/images/ghost-logo.svg" alt="Deep Neural Notebooks">
+      </a>
+    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="Open search">
+      <span class="icon-search"></span>
+    </button>
+  </div>
+
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main" data-aos="fade-down">
+      <div class="l-wrapper">
+        <div class="m-nav">
+          <nav class="m-nav__left">
+            <ul role="submenu">
+                <li class="only-desktop" role="menuitem">
+                  <a href="../index.html" class="m-logo">
+                    <img src="https://static.ghost.org/v1.0.0/images/ghost-logo.svg" alt="Deep Neural Notebooks">
+                  </a>
+                </li>
+                
+    <li class="nav-podcast" role="menuitem">
+      <a href="../index.html">Podcast</a>
+    </li>
+    <li class="nav-about" role="menuitem">
+      <a href="../author/mukul/index.html">About</a>
+    </li>
+
+              <li role="menuitem" class="js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Toggle submenu">
+                  <span class="icon-more"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                          <div class="glide js-recent-slider">
+                            <div class="glide__track" data-glide-el="track">
+                              <div class="glide__slides">
+                                <div class="glide__slide">
+                                  <a href="../dnn-8/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="../content/images/size/w300/2020/07/Podcast-thumbnails.009.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani">
+                                      DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani
+                                    </h3>
+                                    <span class="m-recent-article__date">a month ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="../dnn-7-reinforcement-learning-waymo/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="../content/images/size/w300/2020/07/Podcast-thumbnails.008.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN 7: Reinforcement Learning, Waymo // Shimon Whiteson">
+                                      DNN 7: Reinforcement Learning, Waymo // Shimon Whiteson
+                                    </h3>
+                                    <span class="m-recent-article__date">a month ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="../dnn-6/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="../content/images/size/w300/2020/07/Podcast-thumbnails.007.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN 6: Spirituality, Music &amp; The Bhagavad Gita // Srinivas Reddy">
+                                      DNN 6: Spirituality, Music &amp; The Bhagavad Gita // Srinivas Reddy
+                                    </h3>
+                                    <span class="m-recent-article__date">3 months ago</span>
+                                  </a>
+                                </div>
+                                <div class="glide__slide">
+                                  <a href="../neuroscience-art-and-creativity/index.html" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="../content/images/size/w300/2020/07/Podcast-thumbnails.005.jpeg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="DNN:5 Neuroscience, Art and Creativity // Leslee Lazar">
+                                      DNN:5 Neuroscience, Art and Creativity // Leslee Lazar
+                                    </h3>
+                                    <span class="m-recent-article__date">3 months ago</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                        <ul>
+                            <li>
+                              <a href="../tag/art/index.html">Art</a>
+                            </li>
+                            <li>
+                              <a href="../tag/chatbots/index.html">Chatbots</a>
+                            </li>
+                            <li>
+                              <a href="../tag/computer-vision/index.html">Computer Vision</a>
+                            </li>
+                            <li>
+                              <a href="../tag/creativity/index.html">Creativity</a>
+                            </li>
+                            <li>
+                              <a href="../tag/data-science/index.html">Data Science</a>
+                            </li>
+                            <li>
+                              <a href="../tag/deep-learning/index.html">Deep Learning</a>
+                            </li>
+                            <li>
+                              <a href="../tag/knowledge/index.html">Knowledge</a>
+                            </li>
+                            <li>
+                              <a href="../tag/machine-learning/index.html">Machine Learning</a>
+                            </li>
+                            <li>
+                              <a href="../tag/music/index.html">Music</a>
+                            </li>
+                            <li>
+                              <a href="../tag/nlp/index.html">NLP</a>
+                            </li>
+                        </ul>
+                    </section>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main js-open-search" aria-label="Open search">
+              <span class="icon-search"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle dark mode">
+              <input type="checkbox" class="js-toggle-darkmode">
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+    
+
+  <section class="m-hero with-picture" data-aos="fade">
+    <div class="m-hero__picture in-post"></div>
+    </section>
+  
+  <main>
+    <article>
+      <div class="l-content in-post">
+          <div class="l-wrapper in-post  js-aos-wrapper" data-aos="fade-up" data-aos-delay="300">
+            <div class="l-post-content   js-progress-content">
+              <header class="m-heading">
+                <h1 class="m-heading__title in-post">DNN3: Data Science on the Web, Mozilla, Matplotlib, Pyodide // Mike Droettboom</h1>
+                <div class="m-heading__meta">
+                    <a href="../tag/open-source/index.html" class="m-heading__meta__tag">Open Source</a>
+                    <span class="m-heading__meta__divider">&bull;</span>
+                  <span class="m-heading__meta__time">Dec 11, 2019</span>
+                </div>
+              </header>
+              <div class="pos-relative js-post-content">
+                <div class="m-share">
+                  <div class="m-share__content js-sticky">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/dnn3/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                      <span class="icon-facebook"></span>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=DNN3%3A%20Data%20Science%20on%20the%20Web%2C%20Mozilla%2C%20Matplotlib%2C%20Pyodide%20%2F%2F%20Mike%20Droettboom&url=http://localhost:2368/dnn3/" class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                      <span class="icon-twitter"></span>
+                    </a>
+                    <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="Scroll to top">
+                      <span class="icon-arrow-top"></span>
+                      <svg>
+                        <circle class="progress-ring__circle js-progress" fill="transparent" r="0" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <figure class="kg-card kg-embed-card"><iframe width="100%" height="232" allowtransparency="true" frameborder="0" allow="encrypted-media" title="Spotify Embed: DNN 3: Data Science in Music, Astronomy &amp; Telemetry | Matplotlib, Mozilla &amp; Pyodide | Michael Droettboom " src="https://open.spotify.com/embed-podcast/episode/7aZdMbwIxYfgKpKLxmMRsV"></iframe></figure><p>In the third episode of Deep Neural Notebooks, I talk with Michael Droettboom, from Mozilla.</p><p>Michael is a Staff Data Engineer at Mozilla, where he works on managing the telemetry from Mozilla products, that can be used for improving the user experience and the product itself, while respecting data privacy and making sure that instead of snarfing it all up, only the absolutely minimal data is gathered from the user. He specializes in imaging and data: sheet music, scientific visualization, astronomy, biomedical data and software telemetry. He started his Open Source journey around 2007, contributing to Matplotlib, while he was a Senior Computer Scientist at the Space Telescope Science Institute. He later went on to become a lead developer of Matplotlib, carrying on the vision of Matplotlib’s original author, John Hunter.</p><p>In this episode, we talk about his beginnings - his education in Computers’ and Music, his experience in Astronomy, working at the Space Telescope Science Institute and how he got into contributing to Open Source for Matplotlib. We also talk about his role at Mozilla, the importance of data privacy and the amazing project that he is currently working on - Pyodide, an Open Source tool to empower Data Science in the Browser. Michael also shares some advice for beginners trying to get into Data Science and communities just starting out with Open Source software.</p>
+              </div>
+            </div>
+          </div>
+          <section class="m-author">
+            <div class="m-author__content">
+              <div class="m-author__picture">
+                <a href="../author/mukul/index.html" class="m-author-picture" aria-label="Author picture">
+                    <div style="background-image: url(../content/images/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+                </a>
+              </div>
+              <div class="m-author__info">
+                <h4 class="m-author__name">
+                  <a href="../author/mukul/index.html">Mukul Khanna</a>
+                </h4>
+                  <p class="m-author__bio">Computer Vision Research Intern at Robotics Research Center, IIIT Hyderabad</p>
+                <ul class="m-author-links">
+                    <li>
+                      <a href="http://mukulkhanna.co" target="_blank" rel="noopener" aria-label="Website">
+                        <span class="icon-globe"></span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://twitter.com/@mkulkhanna" target="_blank" rel="noopener" aria-label="Twitter">
+                        <span class="icon-twitter"></span>
+                      </a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="m-recommended">
+            <div class="l-wrapper in-recommended">
+              <h3 class="m-section-title in-recommended">Recommended for you</h3>
+              <div class="m-recommended-articles">
+                <div class="m-recommended-slider glide js-recommended-slider">
+                  <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                      
+    <div class="m-recommended-slider__item glide__slide">
+    <article class="m-article-card post tag-nlp tag-deep-learning tag-chatbots tag-open-source">
+    <div class="m-article-card__picture">
+      <a href="../conversational-ai-nlp-huggingface/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="../content/images/size/w600/2020/07/Podcast-thumbnails.002-2.jpeg" loading="lazy" alt="">
+      <a href="../author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(../content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="../tag/nlp/index.html" class="m-article-card__tag">NLP</a>
+      <a href="../conversational-ai-nlp-huggingface/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN2: Conversational AI, NLP &amp; HuggingFace 🤗 // Thomas Wolf">
+            DNN2: Conversational AI, NLP &amp; HuggingFace 🤗 // Thomas Wolf
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>7 months ago</span>
+          <span>&bull;</span>
+          <span>1 min read</span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+    <div class="m-recommended-slider__item glide__slide">
+    <article class="m-article-card post tag-computer-vision tag-deep-learning tag-machine-learning">
+    <div class="m-article-card__picture">
+      <a href="../dnn-8/index.html" class="m-article-card__picture-link" aria-label="Article"></a>
+        <img clasS="m-article-card__picture-background" src="../content/images/size/w600/2020/07/Podcast-thumbnails.009.jpeg" loading="lazy" alt="">
+      <a href="../author/mukul/index.html" class="m-article-card__author js-tooltip" aria-label="Authors" data-tippy-content="Posted by Mukul Khanna ">
+          <div style="background-image: url(../content/images/size/w100/2020/07/3CA5BB6B-761F-4F3F-8BEC-32E58969F08E-3.JPG);"></div>
+      </a>
+    </div>
+      <div class="m-article-card__info">
+        <a href="../tag/computer-vision/index.html" class="m-article-card__tag">Computer Vision</a>
+      <a href="../dnn-8/index.html" class="m-article-card__info-link">
+        <div>
+          <h2 class="m-article-card__title js-article-card-title " title="DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani">
+            DNN 8: Computer Vision &amp; ML Research, Super SloMo // Varun Jampani
+          </h2>
+        </div>
+        <div class="m-article-card__timestamp">
+          <span>a month ago</span>
+          <span>&bull;</span>
+          <span></span>
+        </div>
+      </a>
+    </div>
+  </article>
+    </div>
+                    </div>
+                  </div>
+                  <div data-glide-el="controls" class="glide__arrows js-controls">
+                    <button data-glide-dir="<" class="m-icon-button filled in-recommended-articles glide-prev" aria-label="Previous">
+                      <span class="icon-arrow-left" aria-hidden="true"></span>
+                    </button>
+                    <button data-glide-dir=">" class="m-icon-button filled in-recommended-articles glide-next" aria-label="Next">
+                      <span class="icon-arrow-right" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </div>
+    </article>
+  </main>
+</div>
+
+
+
+    
+<div class="m-search js-search">
+  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
+    <span class="icon-close"></span>
+  </button>
+  <div class="m-search__content">
+    <form class="m-search__form">
+      <fieldset>
+        <span class="icon-search m-search-icon"></span>
+        <input type="text" class="m-input in-search js-input-search" placeholder="Type to search" aria-label="Type to search">
+      </fieldset>
+    </form>
+    <div class="js-search-results hide"></div>
+    <p class="m-not-found align-center hide js-no-results">
+      No results for your search, please try with something else.
+    </p>
+  </div>
+</div>
+
+    
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <p class="m-footer-copyright">
+      <span>Deep Neural Notebooks &copy; 2020</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+
+    <nav class="m-footer-social">
+        <a href="https://www.facebook.com/ghost" target="_blank" rel="noopener" aria-label="Facebook">
+          <span class="icon-facebook"></span>
+        </a>
+        <a href="https://twitter.com/tryghost" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter"></span>
+        </a>
+    </nav>
+    <p class="m-footer-copyright jslicense">
+      <a href="../assets/html/javascript.html?v=423eaed078" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
+
+    <div class="m-alert success subscribe js-alert" data-notification="subscribe">
+  Great! You&#x27;ve successfully subscribed.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+
+<div class="m-alert success signup js-alert" data-notification="signup">
+  Great! Next, complete checkout for full access.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+
+<div class="m-alert success signin js-alert" data-notification="signin">
+  Welcome back! You&#x27;ve successfully signed in.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+
+<div class="m-alert success checkout js-alert" data-notification="checkout">
+  Success! Your account is fully activated, you now have access to all content.
+  <button class="m-alert__close js-notification-close" aria-label="Close">
+    <span class="icon-close"></span>
+  </button>
+</div>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver%2CPromise%2CArray.prototype.includes%2CString.prototype.endsWith%2CString.prototype.startsWith%2CObject.assign%2CNodeList.prototype.forEach"></script>
+    <script defer src="../assets/js/vendor/content-api.min.js?v=423eaed078"></script>
+    <script defer src="../assets/js/manifest.js?v=423eaed078"></script>
+    <script defer src="../assets/js/vendor.js?v=423eaed078"></script>
+    <script defer src="../assets/js/app.js?v=423eaed078"></script>
+
+      <script defer src="../assets/js/post.js?v=423eaed078"></script>
+
+
+    
+  </body>
+</html>
